@@ -1,6 +1,10 @@
+@file:OptIn(ExperimentalForeignApi::class)
+
 package com.apadmi.mockzilla.lib.internal.utils
 
 import platform.Foundation.*
+
+import kotlinx.cinterop.ExperimentalForeignApi
 
 internal actual class FileIo {
     private val directoryPath by lazy {

@@ -17,7 +17,7 @@ group = "com.apadmi"
 version = extractVersion()
 
 kotlin {
-    android {
+    androidTarget {
         publishAllLibraryVariants()
     }
     
@@ -75,7 +75,7 @@ kotlin {
             }
         }
         val androidMain by getting
-        val androidTest by getting
+        val androidUnitTest by getting
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting
