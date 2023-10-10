@@ -4,9 +4,11 @@ import com.apadmi.mockzilla.lib.internal.di.DependencyInjector
 import com.apadmi.mockzilla.lib.internal.plugin.SimpleAuthPlugin
 import com.apadmi.mockzilla.lib.internal.service.AuthenticationConstants
 import com.apadmi.mockzilla.lib.internal.service.TokensService
+import com.apadmi.mockzilla.lib.internal.utils.DiscoveryService
 import com.apadmi.mockzilla.lib.internal.utils.environment
 import com.apadmi.mockzilla.lib.models.MockzillaConfig
 import com.apadmi.mockzilla.lib.models.MockzillaRuntimeParams
+
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.cio.*
@@ -14,7 +16,10 @@ import io.ktor.server.engine.*
 import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.ratelimit.*
 import io.ktor.server.routing.*
+
 import kotlinx.coroutines.*
+
+private val discoveryService = DiscoveryService("kflsfds")
 
 private var server: ApplicationEngine? = null
 private var job: Job? = null
@@ -62,6 +67,7 @@ internal fun startServer(port: Int, di: DependencyInjector) = runBlocking {
         start(wait = false)
     }
 
+    discoveryService.makeDiscoverable()
     val actualPort = serverEngine.resolvedConnectors().firstOrNull()?.port
         ?: throw Exception("Could not determine runtime port")
     MockzillaRuntimeParams(
