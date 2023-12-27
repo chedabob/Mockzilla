@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.3.0-alpha2](https://github.com/chedabob/Mockzilla/compare/v1.2.0-alpha2...v1.3.0-alpha2) (2023-12-27)
+
+
+### Features
+
+* Add the ability to specify custom log writers on mockzilla ([ce8108e](https://github.com/chedabob/Mockzilla/commit/ce8108e79fcaf2b198cf66878be167ac47fc3fd1))
+* Stop the request body always being parsed as a string ([c49e7d9](https://github.com/chedabob/Mockzilla/commit/c49e7d9e00801dcda10abae76632acd2b729d73d))
+
+
+### Bug Fixes
+
+* explicitly install setuptools to fix pkg_resource error ([833c457](https://github.com/chedabob/Mockzilla/commit/833c45773cbdde989b92fbede656663020352a9d))
+* Fix proguard rules to prevent users needing to add rules to app level files ([b00887d](https://github.com/chedabob/Mockzilla/commit/b00887dd5c9f859b2ded23936742ec173348b3a8))
+* Fix runtime crash which happens only on proguarded non-debuggable builds ([60af941](https://github.com/chedabob/Mockzilla/commit/60af94106c42338eafa4e5c2505b6131d1ce2226))
+* install our gem dependencies ([b92eb96](https://github.com/chedabob/Mockzilla/commit/b92eb9631a9e123933a27db0e537bc5f94b918e1))
+* link in the SwiftMockzilla release notes had an extra 'v' ([6048258](https://github.com/chedabob/Mockzilla/commit/60482588ae7b379e207c308752ea09940abfb7d6))
+* mimick a fix release to test release pipeline ([b97e8fb](https://github.com/chedabob/Mockzilla/commit/b97e8fb0ecdb259c6e0a503f8f61930f7d129a4b))
+* wrong schema for monitor-logs response ([0d4cf22](https://github.com/chedabob/Mockzilla/commit/0d4cf22c008c905e39bc7ee3789c6a08143445ad))
+
 ## [1.2.0-alpha2](https://github.com/Apadmi-Engineering/Mockzilla/compare/v1.1.0-alpha2...v1.2.0-alpha2) (2023-11-01)
 
 
