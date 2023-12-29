@@ -6,6 +6,7 @@ plugins {
     id("com.diffplug.spotless").version("6.11.0")
     id("com.google.devtools.ksp").version("1.9.10-1.0.13")
     id("org.jetbrains.dokka").version("1.8.20")
+    id("io.github.ttypic.swiftklib") version "0.5.1"
 }
 
 buildscript {

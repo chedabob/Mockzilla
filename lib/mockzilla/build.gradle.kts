@@ -11,6 +11,7 @@ plugins {
     id("com.google.devtools.ksp")
     id("com.codingfeline.buildkonfig")
     id("publication-convention")
+    id("io.github.ttypic.swiftklib")
 }
 
 group = "com.apadmi"
@@ -30,6 +31,13 @@ kotlin {
         it.binaries.framework {
             baseName = "mockzilla"
             xcf.add(this)
+        }
+        it.compilations {
+            val main by getting {
+                cinterops {
+                    create("LocalDiscovery")
+                }
+            }
         }
     }
 
@@ -94,6 +102,13 @@ kotlin {
             iosArm64Test.dependsOn(this)
             iosSimulatorArm64Test.dependsOn(this)
         }
+    }
+}
+
+swiftklib {
+    create("LocalDiscovery") {
+        path = file("native-darwin/LocalDiscovery")
+        packageName("com.apadmi.mockzilla.lib.nativedarwin.localdiscovery")
     }
 }
 
